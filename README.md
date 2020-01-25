@@ -14,7 +14,7 @@ Like a boss, right? Let's get started.
 ## Connecting stuff together
 This is the high-level diagram of the connections in my setup. Obviously you don't need all of them - Only the USB CAT & Audio cable is required. 
 
-![Wiring diagram - FT-991/A and VoiceMeeter Banana](/images/ft-991-a-Connection-Diagram-2.png)
+![Connection diagram - FT-991/A and VoiceMeeter Banana](/images/ft-991-a-Connection-Diagram-2.png)
 
 *Connection Diagram*
 
@@ -29,6 +29,8 @@ To signal the TX mode I use either the footswitch (99% of time) or if I'm real l
 After you got the ball rolling in your Voice Meeter and FT-991-A, then it is time to setup your macros.
 
 In the QRZ thread I also gave a glimpse on how to configure the macro buttons.
+
+
 
 ## Creating your macros
 
@@ -89,3 +91,17 @@ For more information on the CAT command set check the [Yaesu FT-991A CAT command
 Hope this is of help!
 
 73 de PY2RAF.
+
+## Bonus points - Wiring, etc.
+
+Here is how I have wired the FT-991A for my silly footswitch and the TX timer (more details on timer [here](https://github.com/rfrht/Yaesu-OLED-TX-Timer)):
+
+[![Wiring Diagram](/images/scaled-ft-991-a-port-wiring.png)](/images/ft-991-a-port-wiring.png)
+
+Wiring diagram - click to enlarge
+
+How does the real deal looks like:
+
+[![Actual FT-991A Wiring](/images/scaled-ft-991-a-picture-wired.jpg)](/images/ft-991-a-picture-wired.jpg)
+
+![73s de PY2RAF](https://rf3.org:8443/q/wink-vm.png)
