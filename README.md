@@ -88,6 +88,34 @@ echo PC100;VX0; > COM4
 * The first line was already explained; and
 * The CAT commands `echo PC100;VX0; > COM4` traslates to `PC100;` restoring the power back to 100W and `VX0;` disabling the VOX mode.
 
+### Reset my radio to my preferred settings!
+This is an example of the possibilities that the CAT command set provides you. I have configured a Macro button to tune to my favourite QRG with my favourite settings. So let's take a look. I have depicted the functionality and its respective CAT command:
+
+~~~
+Freq. 7.130     FA007130000;
+Mode LSB        MD01;
+NB on           NB01;
+DNF off         BC00;
+DNR off         NR00;
+Contour off     CO000000;
+BW 3200         SH021;
+AGC slow        GT03;
+Att off         RA00;
+Preamp IPO      PA00;
+Proc on         PR01;
+TX power 100    PC100;
+Meter PO        MS2;
+VOX off         VX0;
+~~~
+
+Which resulted in this batch file:
+
+~~~
+@ECHO off
+mode COM4 BAUD=38400 PARITY=n DATA=8
+echo FA007130000;MD01;NB01;BC00;NR00;CO000000;SH021;GT03;RA00;SH021;GT03;RA00;PA00;PR01;PC100;MS2;VX0; > COM4
+~~~
+
 ## Reference material
 
 For more information on the CAT command set check the [Yaesu FT-991A CAT command set manual](https://www.yaesu.com/downloadFile.cfm?FileID=13370&FileCatID=158&FileName=FT%2D991A%5FCAT%5FOM%5FENG%5F1711%2DD.pdf&FileContentType=application%2Fpdf).
