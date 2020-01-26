@@ -1,3 +1,3 @@
 @echo off
 mode COM4 BAUD=38400 PARITY=n DATA=8
-echo PC050;VX1; > COM4
+echo PC050;VX1;EX1470600; > COM4
