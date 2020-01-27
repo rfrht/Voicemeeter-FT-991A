@@ -124,20 +124,20 @@ For more information on the CAT command set check the [Yaesu FT-991A CAT command
 
 Enjoy! Explore! Be adventurous!
 
-Hope this is of help.
-
-73 de PY2RAF.
-
 ## Bonus points - Wiring, etc.
 
 Here is how I have wired the FT-991A for my silly footswitch and the TX timer (more details on timer [here](https://github.com/rfrht/Yaesu-OLED-TX-Timer)):
 
 [![Wiring Diagram](/images/scaled-ft-991-a-port-wiring.png)](/images/ft-991-a-port-wiring.png)
 
-Wiring diagram - click to enlarge
+*Wiring diagram - click to enlarge*
 
 How does the real deal looks like:
 
 [![Actual FT-991A Wiring](/images/scaled-ft-991-a-picture-wired.jpg)](/images/ft-991-a-picture-wired.jpg)
 
+*PY2RAF and his abused FT-991A*
+
 ![73s de PY2RAF](https://rf3.org:8443/q/wink-vm.png)
+
+That's it! Happy Hacking! 73s de PY2RAF.
