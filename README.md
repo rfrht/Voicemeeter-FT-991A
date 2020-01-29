@@ -62,14 +62,17 @@ Now, checking the content of the batch file:
 
 ~~~
 @echo off
-mode COM4 BAUD=38400 PARITY=n DATA=8
-echo PC050;VX1; > COM4
+mode COM4 BAUD=38400 PARITY=n DATA=8 > NUL
+SET CAT=PC050;VX1;
+echo| set /p="%CAT%"> COM4
 ~~~
 
-* The line `mode COM4 BAUD=38400 PARITY=n DATA=8` configures my `COM4` port to 38.400 BPS (the value must match the radio's Menu Item `031 - CAT RATE`)
-* The line `echo PC050;VX1; > COM4` actually sends two commands to the radio: `PC050;` sets the TX power to 50 Watts and `VX1;` instructs the radio to enable the VOX mode.
+* The line `mode COM4 BAUD=38400 PARITY=n DATA=8 > NUL` configures my `COM4` port to 38.400 BPS (the value must match the radio's Menu Item `031 - CAT RATE`)
+* The line `SET CAT=PC050;VX1;` defines the CAT command to be sent to the radio. In this example, it is actually sending **two** commands to the radio: `PC050;` sets the TX power to 50 Watts and `VX1;` instructs the radio to enable the VOX mode.
 
-Every CAT command in the FT-991/A line are terminated by the semicolon. No need to send `enter`, newline or something like that.
+    Every CAT command in the FT-991/A line are terminated by the semicolon. No need to send `enter`, newline or something like that.
+
+* And finally, the line `echo| set /p="%CAT%"> COM4` sends the CAT command to your radio.
 
 Conversely, when leaving the CQ mode we have the following macro:
 
@@ -81,12 +84,12 @@ System.Execute("c:\users\rodrigo\auto\modo-cq-on.cmd");
 Which will unmute the microphone and execute `modo-cq-off.cmd`. Which we have:
 
 ~~~
-mode COM4 BAUD=38400 PARITY=n DATA=8
-echo PC100;VX0; > COM4
+mode COM4 BAUD=38400 PARITY=n DATA=8 > NUL
+SET CAT=PC100;VX0;
 ~~~
 
 * The first line was already explained; and
-* The CAT commands `echo PC100;VX0; > COM4` traslates to `PC100;` restoring the power back to 100W and `VX0;` disabling the VOX mode.
+* The CAT commands `PC100;VX0;` traslates to `PC100;` restoring the power back to 100W and `VX0;` disabling the VOX mode.
 
 ### Reset my radio to my preferred settings!
 This is an example of the possibilities that the CAT command set provides you. I have configured a Macro button to tune to my favourite QRG with my favourite settings. So let's take a look. I have depicted the functionality and its respective CAT command:
@@ -112,8 +115,9 @@ Which resulted in this batch file:
 
 ~~~
 @ECHO off
-mode COM4 BAUD=38400 PARITY=n DATA=8
-echo FA007130000;MD01;NB01;BC00;NR00;CO000000;SH021;GT03;RA00;SH021;GT03;RA00;PA00;PR01;PC100;MS2;VX0; > COM4
+mode COM4 BAUD=38400 PARITY=n DATA=8 > NUL
+SET CAT=FA007130000;MD01;NB01;BC00;NR00;CO000000;SH021;GT03;RA00;SH021;GT03;RA00;PA00;PR01;PC100;MS2;VX0;
+echo| set /p="%CAT%"> COM4
 ~~~
 
 ## Reference material

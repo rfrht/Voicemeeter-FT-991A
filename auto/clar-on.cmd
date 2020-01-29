@@ -1,3 +1,4 @@
 @echo off
 mode COM4 BAUD=38400 PARITY=n DATA=8
-echo RT1; > COM4
+set "CAT=RT1;"
+echo| set /p="%CAT%"> COM4
