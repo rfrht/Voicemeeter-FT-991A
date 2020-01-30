@@ -5,7 +5,7 @@ Wanting to spice up your shinny FT-991/A? What about connecting your computer to
 
 What about you controlling your FT-991/A like this:
 
-[![Screenshot, PY2RAF's VoiceMeeter and FT-991/A integration](/images/scaled-screenshot-voicemeeter-ft991a.jpg)](/images/screenshot-voicemeeter-ft991a.png)
+[![Screenshot, PY2RAF's VoiceMeeter and FT-991/A integration](scaled-screenshot-voicemeeter-ft991a.jpg)](/images/screenshot-voicemeeter-ft991a.png)
 
 *Click to enlarge - Screenshot, PY2RAF's VoiceMeeter and FT-991/A integration*
 
