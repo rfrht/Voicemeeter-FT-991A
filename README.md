@@ -38,10 +38,23 @@ Ensure to take a look at the [Youtube video](https://www.youtube.com/watch?v=UWE
 
 You need know what's your radio's CAT COM port number. In my case, it is COM4.
 
-I have provided my batch macro files in in [/auto](/auto) folder. These are used for sending the CAT commands to the radio.
+I have provided my batch macro files in in [/auto](/auto) folder. These are used for sending the CAT commands to the radio. **Ensure** to store the `auto` folder in your Home directory (`c:\users\your-username\auto`), so you can take advantage of the existing automation. 
+
+### The initial setup
+Your radio **COM** port and speed is defined in `setup.cmd` file. In the below example:
+
+~~~
+REM ### CONFIGURE YOUR COM PORT HERE
+set COMPORT=COM4
+
+REM ### THE BELOW BAUD RATE MUST MATCH
+REM ### YOUR TRANSCEIVER BAUD RATE!
+mode %COMPORT% BAUD=38400 PARITY=n DATA=8 > NUL
+~~~
+
+We have the configuration for a transceiver in the COM4 port, and using 38400 bps speed. It is **crucial** to match these values to your transceiver settings!
 
 ### A look into the macros.
-
 Let's dissect one of them. For example, `modo-cq-on.cmd`.
 This macro is triggered when you push the button and engage the CQ mode - In this button I want to:
 
@@ -52,44 +65,46 @@ This macro is triggered when you push the button and engage the CQ mode - In thi
 The macro button has the following VoiceMeeter commands:
 
 ~~~
-System.Execute("c:\users\rodrigo\auto\modo-cq-on.cmd");
+System.Execute("%USERPROFILE%\auto\modo-cq-on.cmd");
 Strip[1].Mute=1;
 ~~~
 
-So, it will invoke the batch file `c:\users\rodrigo\auto\modo-cq-on.cmd` and then mute the headset's microphone - which is in VoiceMeeter's Strip 1.
+So, it will invoke the batch file `c:\users\your-username\auto\modo-cq-on.cmd` and then mute the headset's microphone - which is in VoiceMeeter's Strip 1.
 
 Now, checking the content of the batch file:
 
 ~~~
 @echo off
-mode COM4 BAUD=38400 PARITY=n DATA=8 > NUL
+call %USERPROFILE%\auto\setup.cmd
 SET CAT=PC050;VX1;
-echo| set /p="%CAT%"> COM4
+echo| set /p="%CAT%"> %COMPORT%
 ~~~
 
-* The line `mode COM4 BAUD=38400 PARITY=n DATA=8 > NUL` configures my `COM4` port to 38.400 BPS (the value must match the radio's Menu Item `031 - CAT RATE`)
+* The line `call %USERPROFILE%\auto\setup.cmd` calls the setup batch file and configures your COM port, preparing for it for the communication.
 * The line `SET CAT=PC050;VX1;` defines the CAT command to be sent to the radio. In this example, it is actually sending **two** commands to the radio: `PC050;` sets the TX power to 50 Watts and `VX1;` instructs the radio to enable the VOX mode.
 
-    Every CAT command in the FT-991/A line are terminated by the semicolon. No need to send `enter`, newline or something like that.
+    Every CAT command in the FT-991/A line are terminated by the semicolon. No need to send `enter`, newline or something like that. If you do, it will fail the CAT command
 
-* And finally, the line `echo| set /p="%CAT%"> COM4` sends the CAT command to your radio.
+* And finally, the line `echo| set /p="%CAT%"> %COMPORT%` sends the CAT command to your radio.
 
 Conversely, when leaving the CQ mode we have the following macro:
 
 ~~~
 Strip[1].Mute=0;
-System.Execute("c:\users\rodrigo\auto\modo-cq-on.cmd");
+System.Execute("%USERPROFILE%\auto\modo-cq-off.cmd");
 ~~~
 
 Which will unmute the microphone and execute `modo-cq-off.cmd`. Which we have:
 
 ~~~
-mode COM4 BAUD=38400 PARITY=n DATA=8 > NUL
+call %USERPROFILE%\auto\setup.cmd
 SET CAT=PC100;VX0;
+echo| set /p="%CAT%"> %COMPORT%
 ~~~
 
-* The first line was already explained; and
-* The CAT commands `PC100;VX0;` traslates to `PC100;` restoring the power back to 100W and `VX0;` disabling the VOX mode.
+* The first line was already explained; 
+* The CAT commands `PC100;VX0;` traslates to `PC100;` restoring the power back to 100W and `VX0;` disabling the VOX mode and;
+* Finally sending the command to the radio.
 
 ### Reset my radio to my preferred settings!
 This is an example of the possibilities that the CAT command set provides you. I have configured a Macro button to tune to my favourite QRG with my favourite settings. So let's take a look. I have depicted the functionality and its respective CAT command:
@@ -115,13 +130,17 @@ Which resulted in this batch file:
 
 ~~~
 @ECHO off
-mode COM4 BAUD=38400 PARITY=n DATA=8 > NUL
+call %USERPROFILE%\auto\setup.cmd
 SET CAT=FA007130000;MD01;NB01;BC00;NR00;CO000000;SH021;GT03;RA00;SH021;GT03;RA00;PA00;PR01;PC100;MS2;VX0;
-echo| set /p="%CAT%"> COM4
+echo| set /p="%CAT%"> %COMPORT%
 ~~~
 
-## Reference material
+### Can you share your VoiceMeeter button config?
+For sure! Check the `macro-buttons.xml` in the `auto` folder - This is my current button set and it also makes use of environment variables, so you skip the hassle to edit the buttons and specify your path.
 
+All you have to do is open Macro Buttons, click the top-right icon, select `Load Button Map` and then load the `macro-buttons.xml` file.
+
+## Reference material
 For more information on the CAT command set check the [Yaesu FT-991A CAT command set manual](https://www.yaesu.com/downloadFile.cfm?FileID=13370&FileCatID=158&FileName=FT%2D991A%5FCAT%5FOM%5FENG%5F1711%2DD.pdf&FileContentType=application%2Fpdf).
 
 [VoiceMeeter's Macro Command set](https://www.vb-audio.com/Voicemeeter/VoicemeeterBanana_UserManual.pdf) - There's a number ot tricks over there. One of the nicest that I did was notching power line hum and its harmonics up to the 4th one.
@@ -129,7 +148,6 @@ For more information on the CAT command set check the [Yaesu FT-991A CAT command
 Enjoy! Explore! Be adventurous!
 
 ## Bonus points - Wiring, etc.
-
 Here is how I have wired the FT-991A for my silly footswitch and the TX timer (more details on timer [here](https://github.com/rfrht/Yaesu-OLED-TX-Timer)):
 
 [![Wiring Diagram](/images/scaled-ft-991-a-port-wiring.png)](/images/ft-991-a-port-wiring.png)
