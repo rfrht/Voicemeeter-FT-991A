@@ -1,4 +1,4 @@
 @echo off
 call %USERPROFILE%\auto\setup.cmd
-SET CAT=BC00;
+set "CAT=BU0;"
 echo| set /p="%CAT%"> %COMPORT%
