@@ -36,11 +36,22 @@ In the QRZ thread I also gave a glimpse on how to configure the macro buttons.
 
 Ensure to take a look at the [Youtube video](https://www.youtube.com/watch?v=UWEsG-L3iVU) to learn how to create your macro buttons.
 
-You need know what's your radio's CAT COM port number. In my case, it is COM4.
-
+**tl;dr:**
+1. Open the Macro Buttons app
+2. Right-click the desired button
+3. This is how you configure a pushbutton:
+    
+    ![VoiceMeeter Pushbutton configuration](/images/howto-pushbutton.png)
+    
+4. This is how you configure a two-state (on/off) button:
+    
+    ![VoiceMeeter Two Position Button configuration](/images/howto-2-positions.png)
+    
 I have provided my batch macro files in in [/auto](/auto) folder. These are used for sending the CAT commands to the radio. **Ensure** to store the `auto` folder in your Home directory (`c:\users\your-username\auto`), so you can take advantage of the existing automation. 
 
 ### The initial setup
+You need know what's your radio's CAT COM port number. In my case, it is COM4.
+
 Your radio **COM** port and speed is defined in `setup.cmd` file. In the below example:
 
 ~~~
