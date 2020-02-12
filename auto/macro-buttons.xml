@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VBAudioVoicemeeterMacroButtonMap>
-<MacroButtonConfiguration x0='-11' y0='6' dx='916' dy='678' />
+<MacroButtonConfiguration x0='-9' y0='0' dx='916' dy='679' />
 	<MacroButton index='1' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='91' b2='40' b3='40' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
@@ -47,7 +47,7 @@
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>ENGLISH</MB_Name>
 		<MB_Subname>English CQ Messages</MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
+		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\portugues.cmd");</MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\english.cmd");</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\portugues.cmd");</MB_OffRequest>
 	</MacroButton>
@@ -117,7 +117,7 @@
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>CLARIFIER</MB_Name>
 		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
+		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\clar-off.cmd");</MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\clar-on.cmd");</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\clar-off.cmd");</MB_OffRequest>
 	</MacroButton>
@@ -147,7 +147,9 @@
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>MODO CQ</MB_Name>
 		<MB_Subname>Vox on / 50W / Mudo</MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
+		<MB_InitRequest>Strip[1].Mute=0;
+System.Execute("%USERPROFILE%\auto\modo-cq-off.cmd");
+Recorder.mode.Loop=0;</MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\modo-cq-on.cmd");
 Strip[1].Mute=1;
 Recorder.mode.Loop=1;</MB_OnRequest>
@@ -210,7 +212,7 @@ Recorder.mode.Loop=0;</MB_OffRequest>
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>MULTI DN</MB_Name>
-		<MB_Subname><==</MB_Subname>
+		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\enc-down.cmd");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
@@ -221,7 +223,7 @@ Recorder.mode.Loop=0;</MB_OffRequest>
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>FAST</MB_Name>
 		<MB_Subname>Fast key</MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
+		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\fast-off.cmd");</MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\fast-on.cmd");</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\fast-off.cmd");</MB_OffRequest>
 	</MacroButton>
@@ -312,15 +314,15 @@ Strip[4].A2=0;</MB_OffRequest>
 		<MB_OnRequest></MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='31' type='0' color='2' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0'>
+	<MacroButton index='31' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>CLAR CLEAR</MB_Name>
-		<MB_Subname>Reset Clarifier</MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\clar-clear.cmd");</MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
+		<MB_Name>CONTOUR</MB_Name>
+		<MB_Subname>580 Hz</MB_Subname>
+		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\contour-off.cmd");</MB_InitRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\contour-on.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\contour-off.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='32' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -328,7 +330,8 @@ Strip[4].A2=0;</MB_OffRequest>
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>DNR / DSP</MB_Name>
 		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
+		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\dnr-off.cmd");
+Strip[0].Gain="0";</MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\dnr-on.cmd");
 Strip[0].Gain="12";</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\dnr-off.cmd");
@@ -340,7 +343,7 @@ Strip[0].Gain="0";</MB_OffRequest>
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>AUTONOTCH</MB_Name>
 		<MB_Subname>DNF</MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
+		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\autonotch-off.cmd");</MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\autonotch-on.cmd");</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\autonotch-off.cmd");</MB_OffRequest>
 	</MacroButton>
@@ -354,15 +357,15 @@ Strip[0].Gain="0";</MB_OffRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\amp-amp1.cmd");</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\amp-ipo.cmd");</MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='35' type='1' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0'>
+	<MacroButton index='35' type='0' color='7' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>MONITOR</MB_Name>
-		<MB_Subname>Voice Feedback</MB_Subname>
+		<MB_Name>100 W</MB_Name>
+		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\moni-on.cmd");</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\moni-off.cmd");</MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\100w.cmd");</MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='36' type='0' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -415,25 +418,25 @@ Strip[0].Gain="0";</MB_OffRequest>
 		<MB_OnRequest></MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='41' type='0' color='7' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='41' type='1' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>50W</MB_Name>
-		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\50w.cmd");</MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
+		<MB_Name>VOX</MB_Name>
+		<MB_Subname>Long Drop - for QSO</MB_Subname>
+		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\vox-off.cmd");</MB_InitRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\vox-on.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\vox-off.cmd");</MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='42' type='0' color='7' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='42' type='1' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>100W</MB_Name>
-		<MB_Subname></MB_Subname>
+		<MB_Name>MONITOR</MB_Name>
+		<MB_Subname>Voice Feedback</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\100w.cmd");</MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\moni-on.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\moni-off.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='43' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -455,15 +458,15 @@ Strip[0].Gain="0";</MB_OffRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\band-up.cmd");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='45' type='1' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='45' type='0' color='2' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>VOX</MB_Name>
-		<MB_Subname>1200 ms drop</MB_Subname>
+		<MB_Name>CLAR CLEAR</MB_Name>
+		<MB_Subname>Reset Clarifier</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\vox-on.cmd");</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\vox-off.cmd");</MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\clar-clear.cmd");</MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='46' type='0' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -561,7 +564,7 @@ Bus(0).EQ.channel(1).cell(1).on=0;</MB_OffRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>NOTCH 100</MB_Name>
+		<MB_Name>NOTCH 123</MB_Name>
 		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>Bus(0).EQ.on=1;
