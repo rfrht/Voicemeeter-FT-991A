@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VBAudioVoicemeeterMacroButtonMap>
-<MacroButtonConfiguration x0='-9' y0='0' dx='916' dy='679' />
+<MacroButtonConfiguration x0='-1' y0='0' dx='916' dy='678' />
 	<MacroButton index='1' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='91' b2='40' b3='40' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
@@ -48,7 +48,8 @@
 		<MB_Name>ENGLISH</MB_Name>
 		<MB_Subname>English CQ Messages</MB_Subname>
 		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\portugues.cmd");</MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\english.cmd");</MB_OnRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\english.cmd");
+System.Execute("%USERPROFILE%\auto\100w.cmd");</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\portugues.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='6' type='0' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -318,11 +319,13 @@ Strip[4].A2=0;</MB_OffRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>CONTOUR</MB_Name>
-		<MB_Subname>580 Hz</MB_Subname>
-		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\contour-off.cmd");</MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\contour-on.cmd");</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\contour-off.cmd");</MB_OffRequest>
+		<MB_Name>HEAVY FILT</MB_Name>
+		<MB_Subname>Cont Shift NAR DSP</MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\h-filter-on.cmd");
+Strip[0].Gain="12";</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\h-filter-off.cmd");
+Strip[0].Gain="0";</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='32' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -377,15 +380,14 @@ Strip[0].Gain="0";</MB_OffRequest>
 		<MB_OnRequest>recorder.load="c:\audio\cq\20.mp3";</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='37' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='37' type='0' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
+		<MB_Name>CQ 17</MB_Name>
+		<MB_Subname>18111-18168</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>
-</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\17.mp3";</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='38' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -422,11 +424,11 @@ Strip[0].Gain="0";</MB_OffRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>VOX</MB_Name>
-		<MB_Subname>Long Drop - for QSO</MB_Subname>
-		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\vox-off.cmd");</MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\vox-on.cmd");</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\vox-off.cmd");</MB_OffRequest>
+		<MB_Name>PROC-OFF</MB_Name>
+		<MB_Subname>Enabled by default</MB_Subname>
+		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\proc-on.cmd");</MB_InitRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\proc-off.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\proc-on.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='42' type='1' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -478,24 +480,24 @@ Strip[0].Gain="0";</MB_OffRequest>
 		<MB_OnRequest>recorder.load="c:\audio\cq\10.mp3";</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='47' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='47' type='0' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
+		<MB_Name>CQ 12</MB_Name>
+		<MB_Subname>24931-24990</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\10.mp3";</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='48' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='48' type='0' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
+		<MB_Name>CQ 15</MB_Name>
+		<MB_Subname>21151-21450</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\15.mp3";</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='49' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -518,7 +520,107 @@ Strip[0].Gain="0";</MB_OffRequest>
 		<MB_OnRequest></MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='51' type='1' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='51' type='1' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_Name>VOX</MB_Name>
+		<MB_Subname>Long Drop - for QSO</MB_Subname>
+		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\vox-off.cmd");</MB_InitRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\vox-on.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\vox-off.cmd");</MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='52' type='1' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_Name>NARROW</MB_Name>
+		<MB_Subname>1800 Hz</MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\narrow-on.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\narrow-off.cmd");</MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='53' type='1' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_Name>CONTOUR</MB_Name>
+		<MB_Subname>580 Hz</MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\contour-on.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\contour-off.cmd");</MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='54' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='55' type='0' color='7' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_Name>50W</MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\50w.cmd");</MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='56' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='57' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='58' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='59' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='60' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='61' type='1' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
@@ -539,7 +641,7 @@ Bus(0).EQ.channel(1).cell(0).q=50;</MB_OnRequest>
 		<MB_OffRequest>Bus(0).EQ.channel(0).cell(0).on=0;
 Bus(0).EQ.channel(1).cell(0).on=0;</MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='52' type='1' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='62' type='1' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
@@ -560,7 +662,7 @@ Bus(0).EQ.channel(1).cell(1).q=50;</MB_OnRequest>
 		<MB_OffRequest>Bus(0).EQ.channel(0).cell(1).on=0;
 Bus(0).EQ.channel(1).cell(1).on=0;</MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='53' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='63' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
@@ -594,7 +696,7 @@ Bus(0).EQ.channel(1).cell(2).on=0;
 Bus(2).EQ.channel(0).cell(2).on=0;
 Bus(2).EQ.channel(1).cell(2).on=0;</MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='54' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='64' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
@@ -651,7 +753,7 @@ Bus(0).EQ.channel(1).cell(1).on=0;
 Bus(0).EQ.channel(1).cell(2).on=0;
 Bus(0).EQ.channel(1).cell(3).on=0;</MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='55' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='65' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
@@ -686,106 +788,6 @@ Bus(0).EQ.channel(0).cell(3).on=0;
 Bus(0).EQ.channel(1).cell(3).on=0;
 bus(0).EQ.channel(0).cell(3).on=0;
 bus(0).EQ.channel(1).cell(3).on=0;</MB_OffRequest>
-	</MacroButton>
-	<MacroButton index='56' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
-		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
-		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
-		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
-	</MacroButton>
-	<MacroButton index='57' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
-		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
-		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
-		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
-	</MacroButton>
-	<MacroButton index='58' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
-		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
-		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
-		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
-	</MacroButton>
-	<MacroButton index='59' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
-		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
-		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
-		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
-	</MacroButton>
-	<MacroButton index='60' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
-		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
-		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
-		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
-	</MacroButton>
-	<MacroButton index='61' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
-		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
-		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
-		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
-	</MacroButton>
-	<MacroButton index='62' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
-		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
-		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
-		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
-	</MacroButton>
-	<MacroButton index='63' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
-		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
-		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
-		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
-	</MacroButton>
-	<MacroButton index='64' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
-		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
-		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
-		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
-	</MacroButton>
-	<MacroButton index='65' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
-		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
-		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
-		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='66' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
