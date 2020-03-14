@@ -152,7 +152,7 @@ For sure! Check the `macro-buttons.xml` in the `auto` folder - This is my curren
 All you have to do is open Macro Buttons, click the top-right icon, select `Load Button Map` and then load the `macro-buttons.xml` file.
 
 ### A *NICE* Feature: Different button maps!
-This expands enormously VoiceMeeter functionality, without having to keep an enormous Button Map opened - Now VoiceMeeter ([as version 2.0.5.1](https://forum.vb-audio.com/viewtopic.php?t=498#p3060)) can **load button maps**. So if you need a specific subset of functions, just create a new button map (remember to save your current!) and load it using the command:
+This expands enormously VoiceMeeter functionality, without having to keep an enormous Button Map opened - Now VoiceMeeter ([as of version 2.0.5.1](https://forum.vb-audio.com/viewtopic.php?t=498#p3060)) can **load button maps**. So if you need a specific subset of functions, just create a new button map (remember to save your current!) and load it using the command:
 
 ~~~
 Load("c:\directory\new-button-map.xml");
@@ -168,7 +168,7 @@ Works perfectly. For example, I removed the CQ buttons that I had in the main bu
 
 *CQ Button Map*
 
-**Note**: As of VoiceMeeter version 2.0.5.3, the `Load()` function does not expand %USERPROFILE% env setting, so be sure to specify the explicit file path.
+**Note**: As of VoiceMeeter version 2.0.5.3, the `Load()` function does not expand %USERPROFILE% env setting, so be sure to specify the explicit file path. [Reported in VoiceMeeter forum](https://forum.vb-audio.com/viewtopic.php?t=498#p3060).
 
 ## Reference material
 For more information on the CAT command set check the [Yaesu FT-991A CAT command set manual](https://www.yaesu.com/downloadFile.cfm?FileID=13370&FileCatID=158&FileName=FT%2D991A%5FCAT%5FOM%5FENG%5F1711%2DD.pdf&FileContentType=application%2Fpdf).
