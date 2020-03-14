@@ -152,7 +152,7 @@ For sure! Check the `macro-buttons.xml` in the `auto` folder - This is my curren
 All you have to do is open Macro Buttons, click the top-right icon, select `Load Button Map` and then load the `macro-buttons.xml` file.
 
 ### A *NICE* Feature: Different button maps!
-This expands enormously VoiceMeeter functionality, without having to keep an enormous Button Map opened - Now VoiceMeeter (as version 2.0.5.1) can **load button maps**. So if you need a specific subset of functions, just create a new button map (remember to save your current!) and load it using the command:
+This expands enormously VoiceMeeter functionality, without having to keep an enormous Button Map opened - Now VoiceMeeter ([as version 2.0.5.1](https://forum.vb-audio.com/viewtopic.php?t=498#p3060)) can **load button maps**. So if you need a specific subset of functions, just create a new button map (remember to save your current!) and load it using the command:
 
 ~~~
 Load("c:\directory\new-button-map.xml");
