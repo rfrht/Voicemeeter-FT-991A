@@ -154,7 +154,8 @@ Recorder.mode.Loop=0;</MB_InitRequest>
 Strip[1].Mute=1;
 Recorder.mode.Loop=1;
 Button(32).StateOnly = 1; // 50W</MB_OnRequest>
-		<MB_OffRequest>Strip[1].Mute=0;
+		<MB_OffRequest>Recorder.stop=1;
+Strip[1].Mute=0;
 System.Execute("%USERPROFILE%\auto\modo-cq-off.cmd");
 Recorder.mode.Loop=0;
 Button(32).StateOnly = 0; // 50W</MB_OffRequest>
