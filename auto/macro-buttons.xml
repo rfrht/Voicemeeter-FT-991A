@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VBAudioVoicemeeterMacroButtonMap>
-<MacroButtonConfiguration x0='0' y0='0' dx='777' dy='687' />
+<MacroButtonConfiguration x0='0' y0='0' dx='766' dy='806' />
 	<MacroButton index='1' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='91' b2='40' b3='40' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
@@ -458,22 +458,22 @@ System.Execute("%USERPROFILE%\auto\proc-on.cmd");</MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\moni-on.cmd");</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\moni-off.cmd");</MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='43' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='43' type='0' color='8' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>BAND DOWN</MB_Name>
-		<MB_Subname>-</MB_Subname>
+		<MB_Subname>( - )</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\band-down.cmd");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='44' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='44' type='0' color='8' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>BAND UP</MB_Name>
-		<MB_Subname>+</MB_Subname>
+		<MB_Subname>( + )</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\band-up.cmd");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
@@ -543,25 +543,23 @@ System.Execute("%USERPROFILE%\auto\clar-clear.cmd");</MB_InitRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>HEAVY FILT</MB_Name>
-		<MB_Subname>Cont Shift NAR DSP</MB_Subname>
+		<MB_Name>2.4K</MB_Name>
+		<MB_Subname>BW 2400 Hz</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\h-filter-on.cmd");
-Strip[0].Gain="12";</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\h-filter-off.cmd");
-Strip[0].Gain="0";</MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\2-4k.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\narrow-off.cmd");</MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='52' type='1' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='52' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>NARROW</MB_Name>
-		<MB_Subname>1800 Hz</MB_Subname>
+		<MB_Subname>BW 1800 Hz</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\narrow-on.cmd");</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\narrow-off.cmd");</MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='53' type='1' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='53' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
