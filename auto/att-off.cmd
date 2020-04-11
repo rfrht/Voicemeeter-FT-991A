@@ -1,5 +1,5 @@
 @echo off
 call %USERPROFILE%\auto\setup.cmd
-REM AGC Fast
-set CAT=GT01;
+REM Attenuator Off
+set CAT=RA00;
 echo| set /p="%CAT%"> %COMPORT%

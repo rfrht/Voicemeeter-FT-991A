@@ -152,7 +152,9 @@ Load("c:\users\rodrigo\auto\macro-buttons.xml");</MB_OnRequest>
 		<MB_InitRequest>Strip[1].Mute=0;
 System.Execute("%USERPROFILE%\auto\modo-cq-off.cmd");
 Recorder.mode.Loop=0;</MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\modo-cq-on.cmd");
+		<MB_OnRequest>Recorder.stop=1;
+Wait(100);
+System.Execute("%USERPROFILE%\auto\modo-cq-on.cmd");
 Strip[1].Mute=1;
 Recorder.mode.Loop=1;
 Button(31).StateOnly = 0; // 100W</MB_OnRequest>
