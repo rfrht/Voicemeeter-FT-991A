@@ -1,4 +1,5 @@
 @echo off
 call %USERPROFILE%\auto\setup.cmd
-set CAT=NA01;SH004;
+REM TX Power 15W
+set CAT=PC015;
 echo| set /p="%CAT%"> %COMPORT%
