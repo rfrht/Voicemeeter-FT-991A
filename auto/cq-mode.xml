@@ -8,7 +8,19 @@
 		<MB_Name>CQ 160</MB_Name>
 		<MB_Subname>1840-1850</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>recorder.load="c:\audio\cq\160.mp3";</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\160.mp3";
+Button(1).StateOnly = 0;
+Button(2).StateOnly = 0;
+Button(3).StateOnly = 0;
+Button(10).StateOnly = 0;
+Button(11).StateOnly = 0;
+Button(12).StateOnly = 0;
+Button(13).StateOnly = 0;
+Button(20).StateOnly = 0;
+Button(21).StateOnly = 0;
+Button(22).StateOnly = 0;
+Button(23).StateOnly = 0;
+Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='2' type='1' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -18,7 +30,19 @@
 		<MB_Name>CQ 80</MB_Name>
 		<MB_Subname>3775-3800</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>recorder.load="c:\audio\cq\80.mp3";</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\80.mp3";
+Button(0).StateOnly = 0;
+Button(2).StateOnly = 0;
+Button(3).StateOnly = 0;
+Button(10).StateOnly = 0;
+Button(11).StateOnly = 0;
+Button(12).StateOnly = 0;
+Button(13).StateOnly = 0;
+Button(20).StateOnly = 0;
+Button(21).StateOnly = 0;
+Button(22).StateOnly = 0;
+Button(23).StateOnly = 0;
+Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='3' type='1' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -28,7 +52,19 @@
 		<MB_Name>CQ 60</MB_Name>
 		<MB_Subname>5358.5 - CH 3</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>recorder.load="c:\audio\cq\60.mp3";</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\60.mp3";
+Button(0).StateOnly = 0;
+Button(1).StateOnly = 0;
+Button(3).StateOnly = 0;
+Button(10).StateOnly = 0;
+Button(11).StateOnly = 0;
+Button(12).StateOnly = 0;
+Button(13).StateOnly = 0;
+Button(20).StateOnly = 0;
+Button(21).StateOnly = 0;
+Button(22).StateOnly = 0;
+Button(23).StateOnly = 0;
+Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='4' type='1' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -38,7 +74,19 @@
 		<MB_Name>CQ 40</MB_Name>
 		<MB_Subname>7053-7300</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>recorder.load="c:\audio\cq\40.mp3";</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\40.mp3";
+Button(0).StateOnly = 0;
+Button(1).StateOnly = 0;
+Button(2).StateOnly = 0;
+Button(10).StateOnly = 0;
+Button(11).StateOnly = 0;
+Button(12).StateOnly = 0;
+Button(13).StateOnly = 0;
+Button(20).StateOnly = 0;
+Button(21).StateOnly = 0;
+Button(22).StateOnly = 0;
+Button(23).StateOnly = 0;
+Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='5' type='0' color='1' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -110,7 +158,19 @@ Load("c:\users\rodrigo\auto\macro-buttons.xml");</MB_OnRequest>
 		<MB_Name>CQ 20</MB_Name>
 		<MB_Subname>14190-14200</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>recorder.load="c:\audio\cq\20.mp3";</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\20.mp3";
+Button(0).StateOnly = 0;
+Button(1).StateOnly = 0;
+Button(2).StateOnly = 0;
+Button(3).StateOnly = 0;
+Button(11).StateOnly = 0;
+Button(12).StateOnly = 0;
+Button(13).StateOnly = 0;
+Button(20).StateOnly = 0;
+Button(21).StateOnly = 0;
+Button(22).StateOnly = 0;
+Button(23).StateOnly = 0;
+Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='12' type='1' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -120,7 +180,19 @@ Load("c:\users\rodrigo\auto\macro-buttons.xml");</MB_OnRequest>
 		<MB_Name>CQ 17</MB_Name>
 		<MB_Subname>18111-18168</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>recorder.load="c:\audio\cq\17.mp3";</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\17.mp3";
+Button(0).StateOnly = 0;
+Button(1).StateOnly = 0;
+Button(2).StateOnly = 0;
+Button(3).StateOnly = 0;
+Button(10).StateOnly = 0;
+Button(12).StateOnly = 0;
+Button(13).StateOnly = 0;
+Button(20).StateOnly = 0;
+Button(21).StateOnly = 0;
+Button(22).StateOnly = 0;
+Button(23).StateOnly = 0;
+Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='13' type='1' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -130,7 +202,19 @@ Load("c:\users\rodrigo\auto\macro-buttons.xml");</MB_OnRequest>
 		<MB_Name>CQ 15</MB_Name>
 		<MB_Subname>21151-21450</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>recorder.load="c:\audio\cq\15.mp3";</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\15.mp3";
+Button(0).StateOnly = 0;
+Button(1).StateOnly = 0;
+Button(2).StateOnly = 0;
+Button(3).StateOnly = 0;
+Button(10).StateOnly = 0;
+Button(11).StateOnly = 0;
+Button(13).StateOnly = 0;
+Button(20).StateOnly = 0;
+Button(21).StateOnly = 0;
+Button(22).StateOnly = 0;
+Button(23).StateOnly = 0;
+Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='14' type='1' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -234,7 +318,19 @@ Button(30).StateOnly = 0;</MB_OffRequest>
 		<MB_Name>CQ 10</MB_Name>
 		<MB_Subname>28320-29000</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>recorder.load="c:\audio\cq\10.mp3";</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\10.mp3";
+Button(0).StateOnly = 0;
+Button(1).StateOnly = 0;
+Button(2).StateOnly = 0;
+Button(3).StateOnly = 0;
+Button(10).StateOnly = 0;
+Button(11).StateOnly = 0;
+Button(12).StateOnly = 0;
+Button(13).StateOnly = 0;
+Button(21).StateOnly = 0;
+Button(22).StateOnly = 0;
+Button(23).StateOnly = 0;
+Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='22' type='1' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -244,7 +340,19 @@ Button(30).StateOnly = 0;</MB_OffRequest>
 		<MB_Name>CQ 6</MB_Name>
 		<MB_Subname>50.100-50.125 (110)</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>recorder.load="c:\audio\cq\6.mp3";</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\6.mp3";
+Button(0).StateOnly = 0;
+Button(1).StateOnly = 0;
+Button(2).StateOnly = 0;
+Button(3).StateOnly = 0;
+Button(10).StateOnly = 0;
+Button(11).StateOnly = 0;
+Button(12).StateOnly = 0;
+Button(13).StateOnly = 0;
+Button(20).StateOnly = 0;
+Button(22).StateOnly = 0;
+Button(23).StateOnly = 0;
+Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='23' type='1' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -254,7 +362,19 @@ Button(30).StateOnly = 0;</MB_OffRequest>
 		<MB_Name>CQ 2</MB_Name>
 		<MB_Subname>144.300-144.400</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>recorder.load="c:\audio\cq\2.mp3";</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\2.mp3";
+Button(0).StateOnly = 0;
+Button(1).StateOnly = 0;
+Button(2).StateOnly = 0;
+Button(3).StateOnly = 0;
+Button(10).StateOnly = 0;
+Button(11).StateOnly = 0;
+Button(12).StateOnly = 0;
+Button(13).StateOnly = 0;
+Button(20).StateOnly = 0;
+Button(21).StateOnly = 0;
+Button(23).StateOnly = 0;
+Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='24' type='1' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -264,7 +384,19 @@ Button(30).StateOnly = 0;</MB_OffRequest>
 		<MB_Name>CQ 70cm</MB_Name>
 		<MB_Subname>432.100-432.300</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>recorder.load="c:\audio\cq\70cm.mp3";</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\cq\70cm.mp3";
+Button(0).StateOnly = 0;
+Button(1).StateOnly = 0;
+Button(2).StateOnly = 0;
+Button(3).StateOnly = 0;
+Button(10).StateOnly = 0;
+Button(11).StateOnly = 0;
+Button(12).StateOnly = 0;
+Button(13).StateOnly = 0;
+Button(20).StateOnly = 0;
+Button(21).StateOnly = 0;
+Button(22).StateOnly = 0;
+Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='25' type='1' color='7' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -340,7 +472,19 @@ Button(31).StateOnly = 0; // 100W
 		<MB_Name>QRL</MB_Name>
 		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>recorder.load="c:\audio\qrl.mp3";</MB_OnRequest>
+		<MB_OnRequest>recorder.load="c:\audio\qrl.mp3";
+Button(0).StateOnly = 0;
+Button(1).StateOnly = 0;
+Button(2).StateOnly = 0;
+Button(3).StateOnly = 0;
+Button(10).StateOnly = 0;
+Button(11).StateOnly = 0;
+Button(12).StateOnly = 0;
+Button(13).StateOnly = 0;
+Button(20).StateOnly = 0;
+Button(21).StateOnly = 0;
+Button(22).StateOnly = 0;
+Button(23).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='32' type='1' color='7' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0'>
