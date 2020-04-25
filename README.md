@@ -13,6 +13,9 @@ And without rocket science and no solder iron or complex software programming?
 
 Like a boss, right? Let's get started.
 
+## VoiceMeeter setup and Configuration
+Check the [Wiki](https://github.com/rfrht/Voicemeeter-FT-991A/wiki)
+
 ## Connecting stuff together
 This is the high-level diagram of the connections in my setup. Obviously you don't need all of them - Only the USB CAT & Audio cable is required. 
 
