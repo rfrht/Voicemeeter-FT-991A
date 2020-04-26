@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VBAudioVoicemeeterMacroButtonMap>
-<MacroButtonConfiguration x0='0' y0='0' dx='916' dy='806' />
+<MacroButtonConfiguration x0='0' y0='1' dx='916' dy='807' />
 	<MacroButton index='1' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='91' b2='40' b3='40' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
@@ -166,7 +166,7 @@ System.Execute("%USERPROFILE%\auto\clar-off.cmd");</MB_InitRequest>
 		<MB_Subname>Reset Clarifier</MB_Subname>
 		<MB_InitRequest>Wait(380);
 System.Execute("%USERPROFILE%\auto\clar-clear.cmd");</MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\145000.cmd");</MB_OnRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\clar-clear.cmd");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='15' type='0' color='8' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -275,13 +275,16 @@ Strip[0].B2=1;
 Strip[4].A2=1;
 Button(24).StateOnly = 0; // FT8
 Button(25).StateOnly = 0; // FLDIGI
-Button(40).StateOnly = 0; // PROC</MB_OnRequest>
+Button(40).StateOnly = 0; // PROC
+Wait(150);
+Button(34).State = 1; // 50W</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\rtty-off.cmd");
 Strip[1].Mute=0;
 Strip[0].A1=1;
 Strip[0].B2=0;
 Strip[4].A2=0;
 Button(40).StateOnly = 1; // PROC
+Button(34).StateOnly = 0; // 50W
 Bus[1].EQ.on=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='25' type='1' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -291,7 +294,8 @@ Bus[1].EQ.on=1;</MB_OffRequest>
 		<MB_Name>FT8</MB_Name>
 		<MB_Subname>Mic off/AF off</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>Strip[1].Mute=1;
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\a-to-b.cmd");
+Strip[1].Mute=1;
 Strip[0].A1=0;
 Strip[0].B2=1;
 Strip[4].A2=1;
@@ -299,7 +303,8 @@ Button(23).StateOnly = 0; // RTTY
 Button(25).StateOnly = 0; // FLDIGI
 Button(40).StateOnly = 0; // PROC
 Bus[1].EQ.on=0;</MB_OnRequest>
-		<MB_OffRequest>Strip[1].Mute=0;
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\a-b.cmd");
+Strip[1].Mute=0;
 Strip[0].A1=1;
 Strip[0].B2=0;
 Strip[4].A2=0;
@@ -373,16 +378,15 @@ Button(41).State = 0; // MONI</MB_OffRequest>
 		<MB_OnRequest></MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='31' type='1' color='6' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0'>
+	<MacroButton index='31' type='1' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>VOX</MB_Name>
-		<MB_Subname>Long Drop - for QSO</MB_Subname>
-		<MB_InitRequest>Wait(300);
-System.Execute("%USERPROFILE%\auto\vox-off.cmd");</MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\vox-on.cmd");</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\vox-off.cmd");</MB_OffRequest>
+		<MB_Name>CQ MODE</MB_Name>
+		<MB_Subname>CQ Button Map</MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest>Load("c:\users\rodrigo\auto\cq-mode.xml")</MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='32' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -504,11 +508,12 @@ System.Execute("%USERPROFILE%\auto\proc-on.cmd");</MB_InitRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>MONITOR</MB_Name>
-		<MB_Subname>Voice Feedback</MB_Subname>
-		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\moni-on.cmd");</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\moni-off.cmd");</MB_OffRequest>
+		<MB_Name>VOX</MB_Name>
+		<MB_Subname>Long Drop - for QSO</MB_Subname>
+		<MB_InitRequest>Wait(300);
+System.Execute("%USERPROFILE%\auto\vox-off.cmd");</MB_InitRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\vox-on.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\vox-off.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='43' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -550,11 +555,11 @@ Button(43).StateOnly = 0; // Shift -600</MB_OnRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>AGC FAST</MB_Name>
-		<MB_Subname></MB_Subname>
+		<MB_Name>MONITOR</MB_Name>
+		<MB_Subname>Voice Feedback</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\agc-fast.cmd");</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\agc-slow.cmd");</MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\moni-on.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\moni-off.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='47' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -652,15 +657,15 @@ Wait(100);
 Button(53).State = 0; // ATT</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\amp-ipo.cmd");</MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='56' type='0' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='56' type='0' color='6' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>CQ MODE</MB_Name>
-		<MB_Subname>CQ Button Map</MB_Subname>
+		<MB_Name>AGC FAST</MB_Name>
+		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>Load("c:\users\rodrigo\auto\cq-mode.xml")</MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\agc-fast.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\agc-slow.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='57' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />

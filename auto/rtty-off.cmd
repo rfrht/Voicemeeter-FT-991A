@@ -1,4 +1,7 @@
 @echo off
+
+taskkill /IM "mmtty*"
+
 call %USERPROFILE%\auto\setup.cmd
 
 REM Clar Clear
@@ -9,3 +12,5 @@ REM Return to VFOB
 
 set CAT=RC;EX0400;EX0600;EX0960;SV;
 echo| set /p="%CAT%"> %COMPORT%
+
+taskkill /IM "mmtty*"
