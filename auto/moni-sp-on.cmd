@@ -1,7 +1,5 @@
 @echo off
 call %USERPROFILE%\auto\setup.cmd
-
-REM Recall Memory 017;TXPO 15W; VOX OFF
-
-set CAT=MC017;PC015;VX0;
+REM Disable Monitor - Output to Speaker
+SET CAT=ML0001;ML1050;
 echo| set /p="%CAT%"> %COMPORT%
