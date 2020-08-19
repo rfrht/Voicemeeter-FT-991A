@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VBAudioVoicemeeterMacroButtonMap>
-<MacroButtonConfiguration x0='51' y0='36' dx='770' dy='806' />
+<MacroButtonConfiguration x0='1147' y0='4' dx='770' dy='806' />
 	<MacroButton index='1' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='91' b2='40' b3='40' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
@@ -175,6 +175,11 @@ Bus[0].Gain="0";
 Bus[2].Gain="0";
 Bus[3].Gain="0";
 Bus[4].Gain="0";
+Button(30).State = 0; //
+Wait(50);
+Button(31).State = 0; //
+Wait(50);
+Button(32).State = 0; //
 Load("c:\users\rodrigo\auto\main-map.xml")</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
@@ -551,10 +556,10 @@ Button(32).StateOnly = 0; // SSTV</MB_OnRequest>
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>NARROW</MB_Name>
-		<MB_Subname>200 Hz Wide</MB_Subname>
+		<MB_Subname>350 Hz Wide</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\digital-narrow.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\digital-wide.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='52' type='1' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
