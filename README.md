@@ -13,7 +13,7 @@ And without rocket science and no solder iron or complex software programming?
 
 Like a boss, right? Let's get started.
 
-## VoiceMeeter setup and Configuration
+## How to do it?
 Check the [Wiki](https://github.com/rfrht/Voicemeeter-FT-991A/wiki)
 
 ## Connecting stuff together
