@@ -14,3 +14,5 @@ set CAT=RC;EX0400;EX0600;EX0960;SV;
 echo| set /p="%CAT%"> %COMPORT%
 
 taskkill /IM "mmtty*"
+ping -n 2 127.0.0.1 > NUL
+taskkill /IM "mmtty*"

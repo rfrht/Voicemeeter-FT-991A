@@ -94,7 +94,7 @@ Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>MODO CQ</MB_Name>
-		<MB_Subname>Vox on / 50W / Mudo</MB_Subname>
+		<MB_Subname>Vox on / 25W / Mudo</MB_Subname>
 		<MB_InitRequest>Strip[1].Mute=0;
 System.Execute("%USERPROFILE%\auto\modo-cq-off.cmd");
 Recorder.mode.Loop=0;</MB_InitRequest>
@@ -270,11 +270,13 @@ Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_Subname>English Call</MB_Subname>
 		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\portugues.cmd");</MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\english.cmd");
-Wait(100);
-System.Execute("%USERPROFILE%\auto\100w.cmd");
-Button(31).StateOnly = 1; // 100W</MB_OnRequest>
+Button(24).State = 1; // 100W
+Wait(50);
+Button(33).State = 1; // Narrow</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\portugues.cmd");
-Button(31).StateOnly = 0; // 100W</MB_OffRequest>
+Button(24).State = 0; // 100W
+Wait(50);
+Button(33).State = 0; // Narrow</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='16' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -419,10 +421,10 @@ Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>100 W</MB_Name>
-		<MB_Subname>50 W</MB_Subname>
+		<MB_Subname>25 W</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\100w.cmd");</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\50w.cmd");</MB_OffRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\25w.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='26' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -516,15 +518,15 @@ Button(23).StateOnly = 0;</MB_OnRequest>
 		<MB_OnRequest></MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='34' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='34' type='1' color='7' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='-20.0' tout='-20.0' tmsHold='1000' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
+		<MB_Name>NARROW TX</MB_Name>
+		<MB_Subname>SEEKEWW DIEXX</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\tx-narrow-on.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\tx-narrow-off.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='35' type='1' color='2' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -533,7 +535,9 @@ Button(23).StateOnly = 0;</MB_OnRequest>
 		<MB_Name>SSB</MB_Name>
 		<MB_Subname>SSB Phone Map</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>Button(4).State=0;
+		<MB_OnRequest>Button(33).State=0;
+Wait(70);
+Button(4).State=0;
 Wait(70);
 Load("c:\users\rodrigo\auto\ssb-phone.xml");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
