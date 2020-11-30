@@ -458,11 +458,11 @@ Button(52).State = 0; // BW 2.4</MB_OffRequest>
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>SHIFT -600</MB_Name>
-		<MB_Subname>Shift IF -600 Hz</MB_Subname>
+		<MB_Subname>OFF: Shift -400</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\shift-down.cmd");
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\shift-600.cmd");
 Button(42).StateOnly = 0; //</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\shift-reset.cmd");</MB_OffRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\shift-400.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='43' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -559,23 +559,23 @@ Button(41).StateOnly = 0; // Shift -</MB_OnRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>BW 850</MB_Name>
-		<MB_Subname>Bandwidth 850Hz</MB_Subname>
+		<MB_Name>BW 1.5K</MB_Name>
+		<MB_Subname>Bandwidth N 1.5K</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\narrow-on.cmd");
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\rx-bw-1500.cmd");
 Button(52).StateOnly = 0; // 2.4K</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\narrow-off.cmd");</MB_OffRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\rx-bw-3200.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='53' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>BW 2.4</MB_Name>
-		<MB_Subname>Bandwidth 2.4K</MB_Subname>
+		<MB_Subname>Bandwidth W 2.4K</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\2-4k.cmd");
-Button(51).StateOnly = 0; // 1.8k</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\narrow-off.cmd");</MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\rx-bw-2400.cmd");
+Button(51).StateOnly = 0; // 1.5k</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\rx-bw-3200.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='54' type='1' color='6' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />

@@ -274,8 +274,6 @@ Button(24).State = 1; // 100W
 Wait(50);
 Button(33).State = 1; // Narrow</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\portugues.cmd");
-Button(24).State = 0; // 100W
-Wait(50);
 Button(33).State = 0; // Narrow</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='16' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -336,6 +334,7 @@ Button(33).State = 0; // Narrow</MB_OffRequest>
 		<MB_Subname>28320-29000</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>recorder.load="c:\audio\cq\10.mp3";
+Bus[0].Gain="3";
 Button(0).StateOnly = 0;
 Button(1).StateOnly = 0;
 Button(2).StateOnly = 0;
