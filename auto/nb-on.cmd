@@ -1,8 +1,5 @@
 @echo off
 call %USERPROFILE%\auto\setup.cmd
-
-REM Set Noise Reduction = off
-REM Set AGC to Slow
-
-SET CAT=NR00;GT03;
+REM Enable Noise Blanker
+set "CAT=NB01;"
 echo| set /p="%CAT%"> %COMPORT%

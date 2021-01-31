@@ -129,7 +129,8 @@ System.Execute("c:\ham\hdsdr\hdsdr.exe");</MB_OnRequest>
 		<MB_Name>POWER OFF</MB_Name>
 		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\power-off.cmd");</MB_OnRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\power-off.cmd");
+System.Execute("%USERPROFILE%\auto\pat-stop.cmd");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='14' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
