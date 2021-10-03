@@ -1,4 +1,4 @@
-# Voicemeeter Banana and FT-991/A
+# Using Voicemeeter Banana and FT-991/A
 
 ## [Video](https://www.youtube.com/watch?v=UWEsG-L3iVU)
 Wanting to spice up your shinny FT-991/A? What about connecting your computer to your 991/A and using your computer to *process your audio* without extra hardware or even cost?
