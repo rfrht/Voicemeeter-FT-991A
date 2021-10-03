@@ -3,7 +3,7 @@ call %USERPROFILE%\auto\setup.cmd
 
 REM This does a truckload of things. Namely:
 REM ATU OFF
-REM Noise Blanker on
+REM Noise Blanker off
 REM DNF off
 REM Contour off
 REM Wide mode
@@ -19,5 +19,5 @@ REM Reset Shift
 REM CLAR reset
 REM CLAR off
 
-SET CAT=AC000;NB01;BC00;NR00;CO000000;NA00;SH021;GT03;RA00;PA00;PC100;MS2;VX0;IS0+0000;RC;RT0;
+SET CAT=AC000;NB00;BC00;NR00;CO000000;NA00;SH021;GT03;RA00;PA00;PC100;MS2;VX0;IS0+0000;RC;RT0;
 echo| set /p="%CAT%"> %COMPORT%

@@ -51,7 +51,6 @@
 Strip[0].A2=0;
 Strip[0].B2=1;
 Strip[1].A1=0;
-Strip[1].Mute=1;
 Strip[2].Gain="0";
 Strip[3].Gain="0";
 Strip[4].Gain="0";
@@ -258,8 +257,8 @@ Strip[0].A2=0;</MB_OffRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>10 W</MB_Name>
-		<MB_Subname>5 W</MB_Subname>
+		<MB_Name>40 dBm (10)</MB_Name>
+		<MB_Subname>37 dBm (5)</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\10w.cmd");
 Button(23).StateOnly = 0; // 40W
@@ -270,8 +269,8 @@ Button(24).StateOnly = 0; // 100W</MB_OnRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>40 W</MB_Name>
-		<MB_Subname>20 W</MB_Subname>
+		<MB_Name>46 dBm (40)</MB_Name>
+		<MB_Subname>43 dBm (20)</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\40w.cmd");
 Button(22).StateOnly = 0; // 40W
@@ -282,8 +281,8 @@ Button(24).StateOnly = 0; // 100W</MB_OnRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>100 W</MB_Name>
-		<MB_Subname>50 W</MB_Subname>
+		<MB_Name>50 dBm (1C)</MB_Name>
+		<MB_Subname>47 dBm (50)</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\100w.cmd");
 Button(22).StateOnly = 0; // 40W
@@ -569,10 +568,11 @@ Button(30).StateOnly = 0; // FT8</MB_OnRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
+		<MB_Name>APRS</MB_Name>
 		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\aprs-on.cmd");
+Wait(50);</MB_OnRequest>
 		<MB_OffRequest>
 </MB_OffRequest>
 	</MacroButton>

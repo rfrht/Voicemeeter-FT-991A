@@ -653,11 +653,18 @@ Button(53).StateOnly = 0; // Turn off ATT</MB_OnRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
+		<MB_Name>REPLAY</MB_Name>
 		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\modo-cq-repeat.cmd");
+Button(32).StateOnly = 1; // VOX on
+Recorder.play=1;
+Strip[1].Mute=1;
+Recorder.mode.Loop=1;</MB_OnRequest>
+		<MB_OffRequest>Button(32).State = 0; // VOX off
+Recorder.Stop=1;
+Strip[1].Mute=0;
+Recorder.mode.Loop=0;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='62' type='1' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />

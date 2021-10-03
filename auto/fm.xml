@@ -140,8 +140,10 @@ Bus[4].Gain="0";</MB_InitRequest>
 		<MB_Name>MOX</MB_Name>
 		<MB_Subname>Cambiada Espada</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\mox-on.cmd");</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\mox-off.cmd");</MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\mox-on.cmd");
+// Strip[3].A2=0;</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\mox-off.cmd");
+// Strip[3].A2=1;</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='14' type='1' color='6' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -217,8 +219,8 @@ Bus[4].Gain="0";</MB_InitRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>10 W</MB_Name>
-		<MB_Subname>5W</MB_Subname>
+		<MB_Name>40 dBm (10)</MB_Name>
+		<MB_Subname>37 dBm (5)</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\10w.cmd");
 Button(21).StateOnly = 0; // 40W</MB_OnRequest>
@@ -228,8 +230,8 @@ Button(21).StateOnly = 0; // 40W</MB_OnRequest>
 		<MB_MIDI b1='90' b2='40' b3='40' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>50 W</MB_Name>
-		<MB_Subname>20 W</MB_Subname>
+		<MB_Name>47 dBm (50)</MB_Name>
+		<MB_Subname>43 dBm (20)</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\50w.cmd");
 Button(20).StateOnly = 0; // 10W</MB_OnRequest>

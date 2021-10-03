@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VBAudioVoicemeeterMacroButtonMap>
-<MacroButtonConfiguration x0='0' y0='0' dx='766' dy='678' />
+<MacroButtonConfiguration x0='1162' y0='405' dx='766' dy='678' />
 	<MacroButton index='1' type='1' color='3' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
@@ -334,7 +334,7 @@ Button(33).State = 0; // Narrow</MB_OffRequest>
 		<MB_Subname>28320-29000</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>recorder.load="c:\audio\cq\10.mp3";
-Bus[0].Gain="3";
+Bus[0].Gain="12";
 Button(0).StateOnly = 0;
 Button(1).StateOnly = 0;
 Button(2).StateOnly = 0;
