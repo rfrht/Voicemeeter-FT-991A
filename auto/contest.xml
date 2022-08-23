@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VBAudioVoicemeeterMacroButtonMap>
-<MacroButtonConfiguration x0='1080' y0='25' dx='766' dy='806' />
+<MacroButtonConfiguration x0='917' y0='613' dx='766' dy='806' />
 	<MacroButton index='1' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='91' b2='40' b3='40' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
@@ -259,7 +259,7 @@ Button(21).StateOnly = 0; //</MB_OnRequest>
 		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>Recorder.stop=1;
-System.Execute("%USERPROFILE%\auto\modo-cq-on.cmd");
+System.Execute("%USERPROFILE%\auto\modo-cq-contest-on.cmd");
 Strip[1].Mute=1;
 Recorder.mode.Loop=1;
 Recorder.play=1;</MB_OnRequest>
@@ -355,7 +355,7 @@ Recorder.mode.Loop=0;</MB_OffRequest>
 		<MB_Name>VOX</MB_Name>
 		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\vox-on.cmd");</MB_OnRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\vox-short-on.cmd");</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\vox-off.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='34' type='0' color='8' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0'>
@@ -554,23 +554,23 @@ Button(41).StateOnly = 0; // Shift -</MB_OnRequest>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>BW 850</MB_Name>
-		<MB_Subname>Bandwidth 850Hz</MB_Subname>
+		<MB_Name>BW 1500</MB_Name>
+		<MB_Subname>Bandwidth 1500Hz</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\narrow-on.cmd");
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\rx-bw-1500.cmd");
 Button(52).StateOnly = 0; // 2.4K</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\narrow-off.cmd");</MB_OffRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\rx-bw-3200.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='53' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>BW 1.9</MB_Name>
-		<MB_Subname>Bandwidth 1.95K</MB_Subname>
+		<MB_Name>BW 2.4</MB_Name>
+		<MB_Subname>Bandwidth 2.4K</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\2-4k.cmd");
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\rx-bw-2400.cmd");
 Button(51).StateOnly = 0; // 1.8k</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\narrow-off.cmd");</MB_OffRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\rx-bw-3200.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='54' type='1' color='6' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
