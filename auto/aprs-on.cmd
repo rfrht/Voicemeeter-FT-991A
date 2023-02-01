@@ -1,11 +1,9 @@
 @echo off
 call %USERPROFILE%\auto\setup.cmd
 
-REM Reprogram my QMB memories to my top 5 VHF frequencies:
-REM 144.520, 144.580, 144.960, 145.000 and 147.540
-REM And enters QMB mode.
+Recall Memory 020, menu 076 RTS, Vox 30 ms
 
-set CAT=PC005;VM;FA145570000;AG0000;SQ0000;
+set CAT=MC020;EX0761;EX1470030;
 
 echo| set /p="%CAT%"> %COMPORT%
 
