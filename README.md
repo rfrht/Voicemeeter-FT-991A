@@ -1,4 +1,4 @@
-# Using Voicemeeter Banana and FT-991/A
+# Voicemeeter Banana and FT-991/A
 
 ## [Video](https://www.youtube.com/watch?v=UWEsG-L3iVU)
 Wanting to spice up your shinny FT-991/A? What about connecting your computer to your 991/A and using your computer to *process your audio* without extra hardware or even cost?
@@ -58,15 +58,24 @@ You need know what's your radio's CAT COM port number. In my case, it is COM4.
 Your radio **COM** port and speed is defined in `setup.cmd` file. In the below example:
 
 ~~~
+REM ### **IF** YOUR COM PORT NUMBER IS GREATER
+REM ### THAN 9, USE THE FOLLOWING SYNTAX:
+REM ### FOR EXAMPLE, IF YOUR COM PORT IS COM22:
+REM ### set COMPORT=\\.\COM22
+
 REM ### CONFIGURE YOUR COM PORT HERE
+
 set COMPORT=COM4
 
 REM ### THE BELOW BAUD RATE MUST MATCH
 REM ### YOUR TRANSCEIVER BAUD RATE!
+
 mode %COMPORT% BAUD=38400 PARITY=n DATA=8 > NUL
 ~~~
 
 We have the configuration for a transceiver in the COM4 port, and using 38400 bps speed. It is **crucial** to match these values to your transceiver settings!
+
+Also, pay attention on the above note if you need to use COM ports with values greater than COM9.
 
 ### A look into the macros.
 Let's dissect one of them. For example, `modo-cq-on.cmd`.
