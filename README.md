@@ -13,7 +13,7 @@ And without rocket science and no solder iron or complex software programming?
 
 Like a boss, right? Let's get started.
 
-## VoiceMeeter setup and Configuration
+## How to do it?
 Check the [Wiki](https://github.com/rfrht/Voicemeeter-FT-991A/wiki)
 
 ## Connecting stuff together
@@ -25,7 +25,7 @@ In my setup I don't use the PTT mic - matter of fact I have removed/boxed it. I 
 
 The audio is then sent to the VoiceMeeter, which undergoes a light transformation and compression, and is then fed to the FT-991A.
 
-The VoiceMeeter channel, setup and configuration is described at [this QRZ thread](https://forums.qrz.com/index.php?threads/going-software-defined.650584/) - So this should be your stop number one. There are a number of Radio's Setup configuration clauses that should be checked too, so please visit the above article. If you have any questions, please do ask in the QRZ thread.
+The VoiceMeeter channel, setup and configuration is described at [the wiki page](https://github.com/rfrht/Voicemeeter-FT-991A/wiki) - So this should be your stop number one. There are a number of Radio's Setup configuration clauses that should be checked too, so please visit the above article. If you have any questions, please QRZ and drop me an e-mail - or just file an Github issue.
 
 To signal the TX mode I use either the footswitch (99% of time) or if I'm real lazy, VOX mode.
 
