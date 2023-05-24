@@ -564,12 +564,12 @@ Button(41).StateOnly = 0; // Shift -</MB_OnRequest>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\rx-bw-1500.cmd");
 Wait(50);
-Button(64).State = 1; // Contour</MB_OnRequest>
+System.Execute("%USERPROFILE%\auto\shift-400.cmd");
+Button(52).StateOnly = 0; // 2.4k
+Button(42).StateOnly = 0; // 1.5k</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\rx-bw-3200.cmd");
 Wait(50);
-Button(64).State = 0; // Contour
-Wait(50);
-Button(42).State = 0; // Shift</MB_OffRequest>
+System.Execute("%USERPROFILE%\auto\shift-reset.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='53' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -579,8 +579,12 @@ Button(42).State = 0; // Shift</MB_OffRequest>
 		<MB_Subname>Bandwidth W 2.4K</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\rx-bw-2400.cmd");
-Button(51).StateOnly = 0; // 1.5k</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\rx-bw-3200.cmd");</MB_OffRequest>
+Button(51).StateOnly = 0; // 1.5k
+Wait(50);
+Button(42).State = 1; // Shift -200</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\rx-bw-3200.cmd");
+Wait(50);
+Button(42).State = 0; // Reset Shift</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='54' type='1' color='6' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />

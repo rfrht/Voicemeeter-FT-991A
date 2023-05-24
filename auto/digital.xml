@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VBAudioVoicemeeterMacroButtonMap>
-<MacroButtonConfiguration x0='62' y0='32' dx='770' dy='806' />
+<MacroButtonConfiguration x0='1141' y0='113' dx='770' dy='806' />
 	<MacroButton index='1' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='91' b2='40' b3='40' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
@@ -251,7 +251,7 @@ Strip[0].A2=0;</MB_OffRequest>
 		<MB_Subname>Output in Speakers</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\moni-sp-on.cmd");</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\moni-sp-off.cmd");</MB_OffRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\moni-off.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='23' type='1' color='7' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
