@@ -8,7 +8,9 @@
 		<MB_Name>V / M</MB_Name>
 		<MB_Subname>Toggle VFO/Memory</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\v-m.cmd");</MB_OnRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\v-m.cmd");
+Wait(50);
+System.Execute("%USERPROFILE%\auto\mch.cmd");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='2' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -60,7 +62,9 @@ Bus(1).EQ.on=0;
 Bus[2].Gain="0";
 Bus[3].Gain="0";
 Bus[4].Gain="0";</MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\145000.cmd");</MB_OnRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\145000.cmd");
+Wait(50);
+System.Execute("%USERPROFILE%\auto\mch.cmd");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='6' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
