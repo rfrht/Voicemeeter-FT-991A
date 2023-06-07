@@ -445,13 +445,15 @@ Strip[0].FadeTo=(12, 1200);
 Wait(50);
 Button(42).State = 1; // Shift
 Wait(50);
-Button(52).State = 1; // BW 2.4</MB_OnRequest>
+Button(52).State = 1; // BW 2.4
+Button(63).StateOnly = 1; // AGC Fast</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\dnr-off.cmd");
 Strip[0].Gain="0";
 Wait(50);
 Button(42).State = 0; // Shift
 Wait(50);
-Button(52).State = 0; // BW 2.4</MB_OffRequest>
+Button(52).State = 0; // BW 2.4
+Button(63).StateOnly = 0; //</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='42' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
