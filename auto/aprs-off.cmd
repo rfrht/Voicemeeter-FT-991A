@@ -3,7 +3,7 @@ call %USERPROFILE%\auto\setup.cmd
 
 REM Squelch 30, Menu 076 DAKY, Vox Off
 
-set CAT=EX0760;VX0;
+set CAT=EX0760;VX0;SQ0030;
 
 echo| set /p="%CAT%"> %COMPORT%
 

@@ -50,12 +50,12 @@
 		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\ssb-reset.cmd");
 Strip[0].A2=1;
 Strip[0].Gain="0";
-Strip[1].Gain="-9";
+Strip[1].Gain="0";
 Strip[1].A1=1;
 Strip[2].Gain="0";
 Strip[3].Gain="0";
 Strip[4].Gain="0";
-Bus[0].Gain="0";
+Bus[0].Gain="-9";
 Bus[1].Gain="12";
 Bus[2].Gain="0";
 Bus[3].Gain="0";
@@ -174,7 +174,9 @@ Button(54).StateOnly = 0; // ATT</MB_OnRequest>
 		<MB_Name>MAIN MAP</MB_Name>
 		<MB_Subname>Main Button Map</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>Load("c:\users\rodrigo\auto\main-map.xml");</MB_OnRequest>
+		<MB_OnRequest>Bus[0].EQ.on=0;
+Bus[0].Gain="0";
+Load("c:\users\rodrigo\auto\main-map.xml");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='16' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -280,7 +282,9 @@ Button(21).StateOnly = 0; //</MB_OnRequest>
 		<MB_Name>CQ MAP</MB_Name>
 		<MB_Subname>CQ Button Map</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>Load("c:\users\rodrigo\auto\cq-map.xml");</MB_OnRequest>
+		<MB_OnRequest>Bus[0].EQ.on=0;
+Bus[0].Gain="0";
+Load("c:\users\rodrigo\auto\cq-map.xml");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='26' type='1' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -571,7 +575,8 @@ Button(52).StateOnly = 0; // 2.4k
 Button(42).StateOnly = 0; // 1.5k</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\rx-bw-3200.cmd");
 Wait(50);
-System.Execute("%USERPROFILE%\auto\shift-reset.cmd");</MB_OffRequest>
+System.Execute("%USERPROFILE%\auto\shift-reset.cmd");
+Button(42).StateOnly = 0; // SHIFT200</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='53' type='1' color='4' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -667,8 +672,8 @@ Button(53).StateOnly = 0; // Turn off ATT</MB_OnRequest>
 		<MB_Name>REPLAY</MB_Name>
 		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\modo-cq-repeat.cmd");
-Button(32).StateOnly = 1; // VOX on
+		<MB_OnRequest>Button(32).StateOnly = 1; // VOX on
+System.Execute("%USERPROFILE%\auto\vox-on-600ms.cmd");
 Recorder.play=1;
 Strip[1].Mute=1;
 Recorder.mode.Loop=1;</MB_OnRequest>

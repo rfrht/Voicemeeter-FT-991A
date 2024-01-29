@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VBAudioVoicemeeterMacroButtonMap>
-<MacroButtonConfiguration x0='15' y0='406' dx='766' dy='550' />
+<MacroButtonConfiguration x0='1135' y0='472' dx='766' dy='550' />
 	<MacroButton index='1' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='91' b2='40' b3='40' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
@@ -56,7 +56,7 @@ Strip[1].A1=1;
 Strip[2].Gain="0";
 Strip[3].Gain="0";
 Strip[4].Gain="0";
-Bus[0].Gain="0";
+Bus[0].Gain="-6";
 Bus[1].Gain="12";
 Bus(1).EQ.on=0;
 Bus[2].Gain="0";
@@ -166,7 +166,8 @@ System.Execute("%USERPROFILE%\auto\mch.cmd");</MB_OnRequest>
 		<MB_Name>MAIN MAP</MB_Name>
 		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>Load("c:\users\rodrigo\auto\main-map.xml");</MB_OnRequest>
+		<MB_OnRequest>Bus[0].Gain="0";
+Load("c:\users\rodrigo\auto\main-map.xml");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='16' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
