@@ -597,30 +597,35 @@ Button(32).StateOnly = 0; // SSTV</MB_OnRequest>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\att-on.cmd");
 Wait(100);
-Button(54).State = 0; // AMP</MB_OnRequest>
+Button(54).StateOnly = 0; // AMP
+Button(55).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\att-off.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='55' type='1' color='6' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name>PREAMP</MB_Name>
+		<MB_Name>PREAMP 1</MB_Name>
 		<MB_Subname>+12 dB Amplifier</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\amp-amp1.cmd");
 Wait(100);
-Button(53).State = 0; // ATT</MB_OnRequest>
+Button(53).StateOnly = 0; // ATT
+Button(55).StateOnly = 0;</MB_OnRequest>
 		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\amp-ipo.cmd");</MB_OffRequest>
 	</MacroButton>
-	<MacroButton index='56' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
+	<MacroButton index='56' type='1' color='6' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
 		<MB_XINPUT nctrl='0' nbutton='0' />
-		<MB_Name></MB_Name>
-		<MB_Subname></MB_Subname>
+		<MB_Name>PREAMP 2</MB_Name>
+		<MB_Subname>+24 dB Amplifier</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest></MB_OnRequest>
-		<MB_OffRequest></MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\amp-amp2.cmd");
+Wait(100);
+Button(53).StateOnly = 0; // ATT
+Button(54).StateOnly = 0;</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\amp-ipo.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='57' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
