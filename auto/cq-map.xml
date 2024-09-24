@@ -96,17 +96,17 @@ Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_Name>MODO CQ</MB_Name>
 		<MB_Subname>Vox on / 25W / Mudo</MB_Subname>
 		<MB_InitRequest>Strip[1].Mute=0;
-System.Execute("%USERPROFILE%\auto\modo-cq-off.cmd");
+System.Execute("%USERPROFILE%\auto\current\modo-cq-off.cmd");
 Recorder.mode.Loop=0;</MB_InitRequest>
 		<MB_OnRequest>Recorder.stop=1;
-System.Execute("%USERPROFILE%\auto\modo-cq-on.cmd");
+System.Execute("%USERPROFILE%\auto\current\modo-cq-on.cmd");
 Strip[1].Mute=1;
 Recorder.mode.Loop=1;
 Wait(50);
 Button(14).State = 0</MB_OnRequest>
 		<MB_OffRequest>Recorder.stop=1;
 Strip[1].Mute=0;
-System.Execute("%USERPROFILE%\auto\modo-cq-off.cmd");
+System.Execute("%USERPROFILE%\auto\current\modo-cq-off.cmd");
 Recorder.mode.Loop=0;
 Button(24).StateOnly = 1; // 100W
 Button(42).StateOnly = 0; // Moni
@@ -269,13 +269,13 @@ Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_XINPUT nctrl='0' nbutton='0' />
 		<MB_Name>ENGLISH</MB_Name>
 		<MB_Subname>English Call</MB_Subname>
-		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\portugues.cmd");</MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\english.cmd");
+		<MB_InitRequest>System.Execute("%USERPROFILE%\auto\current\portugues.cmd");</MB_InitRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\current\english.cmd");
 Button(24).StateOnly = 1; // 100W
-System.Execute("%USERPROFILE%\auto\100w.cmd");
+System.Execute("%USERPROFILE%\auto\current\100w.cmd");
 Wait(50);
 Button(33).State = 1; // Narrow</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\portugues.cmd");
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\current\portugues.cmd");
 Button(33).State = 0; // Narrow</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='16' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -424,8 +424,8 @@ Button(30).StateOnly = 0;</MB_OnRequest>
 		<MB_Name>100 W</MB_Name>
 		<MB_Subname>25 W</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\100w.cmd");</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\25w.cmd");</MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\current\100w.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\current\25w.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='26' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -526,8 +526,8 @@ Button(23).StateOnly = 0;</MB_OnRequest>
 		<MB_Name>NARROW TX</MB_Name>
 		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\tx-narrow-on.cmd");</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\tx-narrow-off.cmd");</MB_OffRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\current\tx-narrow-on.cmd");</MB_OnRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\current\tx-narrow-off.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='35' type='1' color='2' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -540,7 +540,7 @@ Button(23).StateOnly = 0;</MB_OnRequest>
 Wait(70);
 Button(4).State=0;
 Wait(70);
-Load("c:\users\rodrigo\auto\ssb-phone.xml");</MB_OnRequest>
+Load("c:\users\rodrigo\auto\current\ssb-phone.xml");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='36' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -600,7 +600,7 @@ Load("c:\users\rodrigo\auto\ssb-phone.xml");</MB_OnRequest>
 		<MB_Name>BAND DOWN</MB_Name>
 		<MB_Subname>( - )</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\band-down.cmd");</MB_OnRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\current\band-down.cmd");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='42' type='0' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -610,7 +610,7 @@ Load("c:\users\rodrigo\auto\ssb-phone.xml");</MB_OnRequest>
 		<MB_Name>BAND UP</MB_Name>
 		<MB_Subname>( + )</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\band-up.cmd");</MB_OnRequest>
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\current\band-up.cmd");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='43' type='1' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
@@ -620,9 +620,9 @@ Load("c:\users\rodrigo\auto\ssb-phone.xml");</MB_OnRequest>
 		<MB_Name>MONITOR</MB_Name>
 		<MB_Subname>TX Feedback</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\moni-on.cmd");
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\current\moni-on.cmd");
 Button(43).StateOnly = 0; // Moni spk</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\moni-off.cmd");</MB_OffRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\current\moni-off.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='44' type='1' color='5' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -631,9 +631,9 @@ Button(43).StateOnly = 0; // Moni spk</MB_OnRequest>
 		<MB_Name>MONITOR SPK</MB_Name>
 		<MB_Subname>Speaker Monitor</MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\moni-sp-on.cmd");
+		<MB_OnRequest>System.Execute("%USERPROFILE%\auto\current\moni-sp-on.cmd");
 Button(42).StateOnly = 0; // Moni</MB_OnRequest>
-		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\moni-off.cmd");</MB_OffRequest>
+		<MB_OffRequest>System.Execute("%USERPROFILE%\auto\current\moni-off.cmd");</MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='45' type='0' color='2' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
@@ -644,7 +644,7 @@ Button(42).StateOnly = 0; // Moni</MB_OnRequest>
 		<MB_InitRequest></MB_InitRequest>
 		<MB_OnRequest>Button(4).State=0;
 Wait(70);
-Load("c:\users\rodrigo\auto\fm.xml");</MB_OnRequest>
+Load("c:\users\rodrigo\auto\current\fm.xml");</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='46' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0'>
