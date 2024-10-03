@@ -204,4 +204,4 @@ How does the real deal looks like:
 
 ![73s de PY2RAF](https://rf3.org:8443/q/wink-vm.png)
 
-That's it! Happy Hacking! 73s de PY2RAF.
+That's it! Happy Hacking! 73, de PY2RAF.
